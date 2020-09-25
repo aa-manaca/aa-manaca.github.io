@@ -25,29 +25,8 @@
 	<meta name="theme-color" content="#5fbccb">
 
 	<!-- CSS -->
+	<link rel="stylesheet" href="./css/reset.css">
 	<style>
-		* {
-			border: none;
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-			outline: none;
-		}
-		html {
-			font-size: 10px;
-		}
-		body {
-			background: #fff;
-			color: #111;
-			font-size: 1.6rem;
-			font-family: "Noto Serif JP", "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
-			letter-spacing: 0.05em;
-			line-height: 2;
-			font-weight: 300;
-			-webkit-text-size-adjust: 100%;
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-		}
 		main {
 			align-items: center;
 			display: flex;
@@ -64,27 +43,30 @@
 			display: block;
 			margin: 0 auto;
 		}
-		form {
+		dl {
+			background: #f3f3f3;
 			position: absolute;
 			bottom: 80px;
 			left: 80px;
 			z-index: 1;
 		}
-		form dl dt {
+		dl dt {
 			font-weight: 900;
 		}
-		form dl dd {
+		dl dd {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-start;
 		}
-		form dl dd input {
+		dl dd input {
 			border-radius: 5px;
 			display: block;
 			font-weight: 900;
 			max-width: 65px;
-			margin: 0 10px;
-			padding: 10px 20px;
+			margin: 0 5px;
+			padding: 5px 10px;
+		}
+		dl dd button {
 		}
 	</style>
 
@@ -100,22 +82,20 @@
 	<main role="main">
 		<div class="l_wrap">
 			<canvas id="mapCanvas"></canvas>
-			<form action="" method="post">
-				<dl>
-					<dt>座標</dt>
-					<dd>
-						<input type="text" value="W">
-						<input type="text" value="0">°
-						<input type="text" value="0">'
-						<input type="text" value="0">"
-						<input type="text" value="S">
-						<input type="text" value="0">°
-						<input type="text" value="0">'
-						<input type="text" value="0">"
-						<button type="submit">検索</button>
-					</dd>
-				</dl>
-			</form>
+			<dl>
+				<dt>座標</dt>
+				<dd>
+					<input type="text" value="W">
+					<input type="text" value="0">°
+					<input type="text" value="0">'
+					<input type="text" value="0">"
+					<input type="text" value="S">
+					<input type="text" value="0">°
+					<input type="text" value="0">'
+					<input type="text" value="0">"
+					<button type="submit">検索</button>
+				</dd>
+			</dl>
 		</div>
 	</main>
 	<footer role="footer">
@@ -123,7 +103,7 @@
 	</footer>
 
 <!-- webfont -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700,900&display=swap&subset=japanese" rel="stylesheet">
 
 <!-- JS -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script> -->
@@ -201,7 +181,7 @@
 		canvas.addEventListener('DOMMouseScroll',handleScroll,false);
 		canvas.addEventListener('mousewheel',handleScroll,false);
 	};
-	img.src = 'map.jpg';
+	img.src = 'img/map.jpg';
 	// var iwc = img.width / 2;
 	// var ihc = img.height / 2;
 	var iwc = 5967 / 2;
